@@ -1,2 +1,13 @@
 .venv
 *.dta
+.*/
+out/
+*.xml
+*.iml
+*.log
+*.class
+*.DS_Store
+*.sqlite3
+*.pyc
+*.pyo
+debug.html
