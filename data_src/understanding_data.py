@@ -1,4 +1,5 @@
 import json
+import pandas as pd
 
 def explore_data():
     with open("data_src/db.json", encoding='utf8') as JSONFile:
@@ -17,8 +18,11 @@ def explore_data():
     print(len(uniqueValues))
     print(len(identifiers))
 
- 
+def readSrcFile():
+    df = pd.read_stata("db.dta")
+    print(list(df.columns))
+
     
 
 if __name__ == "__main__":
-    explore_data()
+    readSrcFile()
