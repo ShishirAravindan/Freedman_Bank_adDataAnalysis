@@ -4,6 +4,9 @@ Created a script containing a bunch of functions useful for extracting relevant 
 import pandas as pd
 import json
 import csv
+import os
+
+path_to_JSON = os.path.join(os.getcwd(), "data_src/db.json")
 
 
 def getAllAdTexts():
@@ -11,7 +14,7 @@ def getAllAdTexts():
     Returns dictionary with key as identifier and value as text of all ad data
     all the ad texts will be converted into lowercase for processing
     """
-    with open('db.json', 'r') as f:
+    with open(path_to_JSON, 'r') as f:
         data = json.load(f)
     result = {}
     for ad in data:
@@ -27,7 +30,7 @@ def getAdByID(id: int):
     Returns the ad dictionary given an unique identifier,
     if identifier does not exist, returns None
     """
-    with open('db.json', 'r') as f:
+    with open(path_to_JSON, 'r') as f:
         data = json.load(f)
     for ad in data:
         if ad['identifier'] == str(id):
@@ -39,7 +42,7 @@ def getFSBAds():
     """
     Returns list[int] of ad identifiers where the bank is Freedman's Savings bank.
     """
-    with open('db.json', 'r') as f:
+    with open(path_to_JSON, 'r') as f:
         data = json.load(f)
     result = []
     for ad in data:
@@ -54,7 +57,7 @@ def getFSBAds():
 
 def getOtherAds():
     """Returns list[int] of ad identifiers where the bank is not Freedman's Savings bank."""
-    with open('db.json', 'r') as f:
+    with open(path_to_JSON, 'r') as f:
         data = json.load(f)
     result = []
     fsb_adds = getFSBAds()
@@ -62,5 +65,4 @@ def getOtherAds():
         if int(ad['identifier']) not in fsb_adds:
             result.append(int(ad['identifier']))
     return result
-
 
