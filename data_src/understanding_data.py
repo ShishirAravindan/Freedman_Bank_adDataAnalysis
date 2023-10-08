@@ -5,6 +5,9 @@ def explore_data():
         data = json.load(JSONFile)
     uniqueValues = set()
     for i in range(len(data)):
+        identifiers = set()
+        identifiers.add(data[i]["identifier"])
+        # print(data[0].keys())
         date = (data[i]["Year"], data[i]["Month"], data[i]["Day"])
         text = data[i]["Text"]
         data_point = (date, text)
@@ -12,7 +15,10 @@ def explore_data():
             uniqueValues.add(data_point)
 
     print(len(uniqueValues))
+    print(len(identifiers))
 
+ 
+    
 
 if __name__ == "__main__":
     explore_data()
