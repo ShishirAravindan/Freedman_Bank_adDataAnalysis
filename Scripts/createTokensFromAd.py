@@ -12,13 +12,14 @@ def getMarkedAdText(text:str)-> str:
         sentence_container+=sentence+ " [SEP]" 
     return ("[CLS] "+sentence_container)
 
-def getSegmentIDs(marked_text:str) -> list[int]:
+def getSegmentIDs(marked_text:list[str]) -> list[int]:
     """
     Given a marked version of text return the segment IDs.
     A segment corresponds to a sentence in the token.
     Ex: token = "[CLS] a b [SEP] c [SEP] d [SEP]"
     return: [0,0,0,0, 1, 1, 2, 2]
     """
+    marked_text = ' '.join(marked_text)
     segment_index = 0
     segment_count = 0
     segment_IDs = []
