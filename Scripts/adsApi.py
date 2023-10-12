@@ -24,6 +24,20 @@ def getAllAdTexts():
             result[identifier] = text.lower()
     return result
 
+def getFirstTwoAds():
+    """
+    Returns the first two ads
+    """
+    ads =getAllAdTexts()
+    i=0
+    result = {}
+    for ad in ads:
+        if i<2:
+            result[ad] = ads[ad]
+            i+=1
+        else:
+            break
+    return result
 
 def getAdByID(id: int):
     """
@@ -66,3 +80,16 @@ def getOtherAds():
             result.append(int(ad['identifier']))
     return result
 
+def getCustomTwoAds(identifier:int):
+    """
+    Returns an ad based on id and custom string
+    """
+    result = {}
+    result[str(identifier)]= getAdByID(identifier)['Text']
+    # result["1"]="avoid buying costly garments ; spend not your hard-earned wages for filthy tobacco and useless drinks ; do not waste money at circuses, expensive pic-nics and excursions.cut off your vices - don't smoke - don't drink - don't buy lottery tickets.\
+    #        it is your duty to provide for your settlement in life"
+
+    return {"0":"good","2":"bad"}
+    
+    
+    

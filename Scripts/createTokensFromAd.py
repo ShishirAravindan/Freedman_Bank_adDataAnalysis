@@ -10,7 +10,10 @@ def getMarkedAdText(text:str)-> str:
     sentence_container = ""
     for sentence in list_sentences:
         sentence_container+=sentence+ " [SEP]" 
-    return ("[CLS] "+sentence_container)
+    # return ("[CLS] "+sentence_container)
+    return (sentence_container)
+
+
 
 def getSegmentIDs(marked_text:list[str]) -> list[int]:
     """
@@ -43,8 +46,13 @@ def main():
     Returns a map with identifier as key and the marked ad text as values.
     """
     identifier_markedtext_map={}
-    result = adsApi.getAllAdTexts()
+    #result = adsApi.getAllAdTexts()
+    result = adsApi.getCustomTwoAds(1869081906201)
     for ads in result:
-        marked_text = getMarkedAdText(result[ads])
+        # For Single embedding, we use just the text of the ad.
+        marked_text = result[ads]
+        #marked_text = getMarkedAdText(result[ads])
+        # marked_text = result[ads].split('.')
+        # marked_text.pop()
         identifier_markedtext_map[ads] = marked_text
     return identifier_markedtext_map
