@@ -90,7 +90,7 @@ def getCustomTwoAds(identifier:int):
            it is your duty to provide for your settlement in life"
 
     # return 
-    return result
+    return {"0":"I am very good","1":"I am very bad"}
     
     
     
