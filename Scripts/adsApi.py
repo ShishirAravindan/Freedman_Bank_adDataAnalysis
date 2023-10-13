@@ -86,10 +86,11 @@ def getCustomTwoAds(identifier:int):
     """
     result = {}
     result[str(identifier)]= getAdByID(identifier)['Text']
-    # result["1"]="avoid buying costly garments ; spend not your hard-earned wages for filthy tobacco and useless drinks ; do not waste money at circuses, expensive pic-nics and excursions.cut off your vices - don't smoke - don't drink - don't buy lottery tickets.\
-    #        it is your duty to provide for your settlement in life"
+    result["1"]="avoid buying costly garments ; spend not your hard-earned wages for filthy tobacco and useless drinks ; do not waste money at circuses, expensive pic-nics and excursions.cut off your vices - don't smoke - don't drink - don't buy lottery tickets.\
+           it is your duty to provide for your settlement in life"
 
-    return {"0":"good","2":"bad"}
+    # return 
+    return result
     
     
     
