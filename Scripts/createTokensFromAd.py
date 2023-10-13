@@ -47,7 +47,7 @@ def main():
     """
     identifier_markedtext_map={}
     #result = adsApi.getAllAdTexts()
-    result = adsApi.getCustomTwoAds(1869081906201)
+    result = adsApi.getCustomTwoAds(1873033120201)
     for ads in result:
         # For Single embedding, we use just the text of the ad.
         marked_text = result[ads]
