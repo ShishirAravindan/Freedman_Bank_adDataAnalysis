@@ -24,7 +24,7 @@ def getAllAdTexts():
             result[identifier] = text.lower()
     return result
 
-def getFirstTwoAds():
+def getNAds(num:int):
     """
     Returns the first two ads
     """
@@ -32,7 +32,7 @@ def getFirstTwoAds():
     i=0
     result = {}
     for ad in ads:
-        if i<2:
+        if i<num:
             result[ad] = ads[ad]
             i+=1
         else:
