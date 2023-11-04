@@ -12,7 +12,6 @@ def main():
     data.to_csv("adSimilarity.csv",index=False)
     data.to_json("adSimilarity.json",orient="records",indent=4)
     data.to_excel("adSimilarity.xlsx",index=False)
-
     
 if __name__=="__main__":
     main()
