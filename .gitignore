@@ -1,4 +1,5 @@
 .venv
+*.lock
 fsbvenv/*
 *.dta
 .*/
@@ -12,4 +13,4 @@ out/
 *.pyc
 *.pyo
 debug.html
-serializedAdEmbeddings.pkl
+*.pkl
