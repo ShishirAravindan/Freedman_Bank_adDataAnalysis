@@ -13,5 +13,5 @@ out/
 *.pyo
 debug.html
 serializedAdEmbeddings.pkl
-
-
+*.lock
+*.toml
