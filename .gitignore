@@ -13,4 +13,4 @@ out/
 *.pyc
 *.pyo
 debug.html
-*.pkl
+serializedAdEmbeddings.pkl
