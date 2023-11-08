@@ -1,4 +1,4 @@
-from adSimilarity import *
+from Scripts.adSimilarity import *
 import pandas as pd
 from Scripts import adsApi
 def main():
