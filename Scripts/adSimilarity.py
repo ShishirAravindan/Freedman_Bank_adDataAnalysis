@@ -55,7 +55,7 @@ def adSimilarity(ad_sentence:str):
 
 def getCosineSimilarity(mean_pooled):
     # Building NP-array of Dictionary embeddings
-    with open("staticEmbeddings/serializedDictionaryEmbeddings.pkl", "rb") as f:
+    with open("dictionaryEmbeddings/serializedDictionaryEmbeddings_unified.pkl", "rb") as f:
         deserializedDictEmbeddings = pickle.load(f)
         output=[]
         for dictionary in deserializedDictEmbeddings:
@@ -69,6 +69,14 @@ def getCosineSimilarity(mean_pooled):
                     return [-1]*len(deserializedDictEmbeddings)
             output.append(np.amax(cosine_similarity_list))
     return output
+
+def getDictionaryColumns():
+    with open("dictionaryEmbeddings/serializedDictionaryEmbeddings_unified.pkl", "rb") as f:
+        deserializedDictEmbeddings = pickle.load(f)
+        column_names=['Identifier']+list(deserializedDictEmbeddings.keys())
+        return column_names
+        
+#getDictionaryColumns()
             
 
 
