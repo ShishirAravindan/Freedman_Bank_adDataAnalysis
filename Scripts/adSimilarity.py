@@ -7,8 +7,7 @@ import pickle
 import os
 
 def getDictionaryColumns(dictionaryFileName: str):
-    parentDir = os.path.dirname(os.getcwd())
-    DictionaryEmbeddingsFile = os.path.join(parentDir, f"dictionaryEmbeddings/{dictionaryFileName}.pkl")
+    DictionaryEmbeddingsFile = os.path.join(os.getcwd(), f"dictionaryEmbeddings/{dictionaryFileName}.pkl")
     
     with open(DictionaryEmbeddingsFile, "rb") as f:
         deserializedDictEmbeddings = pickle.load(f)
@@ -16,8 +15,7 @@ def getDictionaryColumns(dictionaryFileName: str):
         return column_names
 
 def getCosineSimilarity(mean_pooled, dictionaryFileName: str):
-    parentDir = os.path.dirname(os.getcwd())
-    DictionaryEmbeddingsFile = os.path.join(parentDir, f"dictionaryEmbeddings/{dictionaryFileName}.pkl")
+    DictionaryEmbeddingsFile = os.path.join(os.getcwd(), f"dictionaryEmbeddings/{dictionaryFileName}.pkl")
 
     # Building NP-array of Dictionary embeddings
     with open(DictionaryEmbeddingsFile, "rb") as f:
