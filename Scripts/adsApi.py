@@ -8,6 +8,7 @@ import os
 
 def _convertExcelToJSON(source, target):
     df = pd.read_excel(source)
+    df['identifier'] = df['identifier'].astype(int)
     JSONData = df.to_json(orient='records')
 
     with open(target, 'w') as JSONFile:
